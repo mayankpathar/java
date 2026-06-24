@@ -1,0 +1,42 @@
+Working on a concise comparison of JVM, JDK, and JRE, then I will list the Java program execution states step by step from source code to runtime.JVM vs JRE vs JDK
+
+JVM (Java Virtual Machine)
+Runs Java bytecode.
+Handles class loading, memory management, garbage collection, JIT compilation, and execution.
+Platform-dependent implementation, but gives platform-independent Java execution.
+JRE (Java Runtime Environment)
+JRE = JVM + core Java class libraries + supporting runtime files.
+Used only to run Java applications.
+Does not include development tools like compiler.
+JDK (Java Development Kit)
+JDK = JRE + development tools.
+Includes javac (compiler), jar, javadoc, debugger, and other build/dev tools.
+Used to develop, compile, and run Java programs.
+Quick relation:
+JDK > JRE > JVM
+
+States/Phases of Java Program Execution
+
+Writing source code
+You write .java file(s).
+Compilation
+javac compiles .java into .class bytecode.
+Class loading
+Class Loader loads required .class files into memory.
+Bytecode verification
+Bytecode Verifier checks bytecode safety and correctness.
+Linking
+Preparation: memory allocated for class variables.
+Resolution: symbolic references are resolved.
+Initialization
+Static variables and static blocks are initialized.
+Execution
+JVM executes bytecode using:
+Interpreter (line-by-line execution), and/or
+JIT compiler (converts hot code to native machine code for speed).
+Runtime memory and GC
+Stack, Heap, Method Area, etc. are used during execution.
+Garbage Collector reclaims unused heap objects.
+Program termination
+Program ends when main and all non-daemon threads finish (or exits explicitly).
+If you want, I can also give this as a short exam-style answer (2 marks / 5 marks / 10 marks versions).
